@@ -1,0 +1,29 @@
+<div class="searchBar">
+  <form (ngSubmit)="searchChannel()">
+    <input type="text" placeholder="Search channels" [(ngModel)]="searchInput" name="searchInput">
+    <button type="submit">Search!</button>
+  </form>
+</div>
+
+<div *ngIf="channels.length > 0" class="channels">
+  <h2>Channels</h2>
+  <ul>
+    <li *ngFor="let channel of channels">
+      <div class="channel-info">
+        <strong>{{ channel.name }}</strong>: {{ channel.description }}
+      </div>
+      <button class="subscribeButton" (click)="subscribeUserToChannel(channel)">SUBSCRIBE</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="subscriptions.length > 0" class="channels">
+  <h2>Subscriptions</h2>
+  <ul>
+    <li *ngFor="let channel of subscriptions">
+        <div class="channel-info">
+          <strong>{{ channel.name }}</strong>: {{ channel.description }}
+        </div>
+    </li>
+  </ul>
+</div>
