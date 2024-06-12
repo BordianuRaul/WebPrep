@@ -1,0 +1,9 @@
+<div class = "wrapper">
+  <form (ngSubmit)="submitForm()">
+    <label class="UsernameLabel" for="username">Enter username</label>
+    <input class="UsernameInputField" type="text" id="username" name="username" [(ngModel)]="user.name">
+    <label class="PasswordLabel" for="password">Enter password</label>
+    <input class="PasswordInputField" type="password" id="password" name="password" [(ngModel)]="user.password">
+    <button type="submit">Login</button>
+  </form>
+</div>

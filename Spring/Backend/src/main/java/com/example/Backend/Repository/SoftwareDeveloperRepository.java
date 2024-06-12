@@ -36,5 +36,10 @@ public class SoftwareDeveloperRepository {
         };
     }
 
+    public int getSoftwareDeveloperId(String name) {
+        String sql = "SELECT id FROM softwaredeveloper WHERE name = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{name}, Integer.class);
+    }
+
 
 }

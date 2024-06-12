@@ -15,8 +15,11 @@ public class SoftwareDeveloperService {
     public SoftwareDeveloperService(SoftwareDeveloperRepository softwareDeveloperRepository) {
         this.softwareDeveloperRepository = softwareDeveloperRepository;
     }
-
     public List<SoftwareDeveloper> findAll() {
         return softwareDeveloperRepository.findAll();
+    }
+
+    public int getSoftwareDeveloperId(String name) {
+        return softwareDeveloperRepository.getSoftwareDeveloperId(name);
     }
 }

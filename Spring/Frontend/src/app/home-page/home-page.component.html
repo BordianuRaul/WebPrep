@@ -1,0 +1,35 @@
+
+<div *ngIf="projects.length > 0" class="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li *ngFor="let project of projects">
+      <div class="project-info">
+        <strong>{{ project.name }}</strong>: {{ project.managerId}} - {{ project.description }} - Members: {{ project.members }}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="projectsUserIsMember.length > 0" class="projects">
+  <h2>Projects you are part of</h2>
+  <ul>
+    <li *ngFor="let project of projectsUserIsMember">
+      <div class="project-info">
+        <strong>{{ project.name }}</strong>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<form>
+  <div class="form-group">
+    <label for="developerName">Developer Name:</label>
+    <input type="text" id="developerName" name="developerName" class="form-control" [(ngModel)]="developerName">
+  </div>
+  <div class="form-group">
+    <label for="projectName">Project Name:</label>
+    <input type="text" id="projectName" name="projectName" class="form-control" [(ngModel)]="projectName">
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
